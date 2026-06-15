@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #0f172a;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translate3d(var(--reveal-x, 0), var(--reveal-y, 18px), 0)
+      scale(var(--reveal-scale, 1));
+    transition:
+      opacity var(--reveal-duration, 620ms) var(--reveal-ease, cubic-bezier(0.16, 1, 0.3, 1))
+        var(--reveal-delay, 0ms),
+      transform var(--reveal-duration, 620ms) var(--reveal-ease, cubic-bezier(0.16, 1, 0.3, 1))
+        var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+
+  [data-reveal="fade"] {
+    --reveal-y: 0;
+  }
+
+  [data-reveal="bella"] {
+    --reveal-y: 16px;
+    --reveal-duration: 720ms;
+    --reveal-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  [data-reveal="bella-soft"] {
+    --reveal-y: 10px;
+    --reveal-duration: 820ms;
+    --reveal-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  [data-reveal="auto"] {
+    --reveal-y: 22px;
+    --reveal-duration: 460ms;
+    --reveal-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  [data-reveal="auto-left"] {
+    --reveal-x: -22px;
+    --reveal-y: 0;
+    --reveal-duration: 500ms;
+    --reveal-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  [data-reveal="auto-right"] {
+    --reveal-x: 22px;
+    --reveal-y: 0;
+    --reveal-duration: 500ms;
+    --reveal-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  [data-inview="true"] {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  .landing-cta {
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease,
+      background-color 180ms ease,
+      border-color 180ms ease,
+      color 180ms ease;
+  }
+
+  .landing-cta:hover {
+    transform: translateY(-1px) scale(1.01);
+  }
+
+  .landing-cta:active {
+    transform: translateY(0) scale(0.985);
+  }
+
+  .bella-float {
+    animation: bella-float 9s ease-in-out infinite alternate;
+  }
+
+  .auto-scanline {
+    animation: auto-scanline 3.8s ease-in-out infinite;
+  }
+
+  .auto-logo-mark svg {
+    transition: transform 220ms ease;
+  }
+
+  .auto-logo-mark:hover svg {
+    transform: rotate(-8deg) scale(1.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-inview="true"],
+  .landing-cta,
+  .bella-float,
+  .auto-scanline,
+  .auto-logo-mark svg {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+@keyframes bella-float {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(0, 14px, 0) scale(1.03);
+  }
+}
+
+@keyframes auto-scanline {
+  0% {
+    opacity: 0;
+    transform: translateX(-18%);
+  }
+
+  45%,
+  55% {
+    opacity: 0.45;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(118%);
+  }
+}
