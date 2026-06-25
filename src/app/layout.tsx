@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Landings WhatsApp para negócios locais",
+  title: "FA Soluções Digitais | Sites para negócios locais",
   description:
-    "Modelos fictícios de landing pages para captação de orçamento e agendamento via WhatsApp.",
+    "Landing pages, sites simples e presença digital para negócios locais captarem mais clientes pelo WhatsApp.",
 };
 
 export default function RootLayout({
