@@ -24,7 +24,7 @@ import { ScrollRevealController } from "@/components/ScrollRevealController";
 import { createWhatsAppLink } from "@/lib/whatsapp";
 
 const whatsappHref = createWhatsAppLink(
-  "5582999999999",
+  "5582987544094",
   "Olá, vim pelo Instagram e gostaria de solicitar um orçamento para uma landing page ou site.",
 );
 
